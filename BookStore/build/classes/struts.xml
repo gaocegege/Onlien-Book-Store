@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">   
+<struts>
+	<!-- class的交给spring管理-->
+	<constant name="struts.objectFactory" value="spring"></constant>
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	<package name="bookstore" extends="struts-default,json-default">
+		<action name="login" class="loginAction">
+			<result name="success">/WEB-INF/content/slogin.jsp</result>
+			<result name="error">/WEB-INF/content/error.jsp</result>
+		</action>
+		<action name="register" class="registerAction" method="register">
+			<result name="success">/WEB-INF/content/sregister.jsp</result>
+			<result name="error">/WEB-INF/content/error.jsp</result>
+		</action>
+		<action name="registerCheckUsername" class="registerAction" method="checkUsername">
+			<result type="json"></result>
+		</action>
+		<action name="bookShowSearch" class="bookShowAction" method="search">
+			<result type="json"></result>
+		</action>
+		<action name="bookPageView" class="bookShowAction" method="pageView">
+			<result type="json"></result>
+		</action>
+		<action name="bookPageNum" class="bookShowAction" method="pageNum">
+			<result type="json"></result>
+		</action>
+		<action name="sbookShow" class="sbookShowAction">
+			<result name="success">/WEB-INF/content/statisticbooks.jsp</result>
+		</action>
+		<action name="addBook" class="addBookAction">
+			<result name="success">/WEB-INF/content/slogin.jsp</result>
+		</action>
+		<action name="addToBasket" class="addToBasketAction">
+			<result name="success">basket.jsp</result>
+		</action>
+		<action name="bargain" class="bargainAction">
+			<result name="success">/WEB-INF/content/bargain.jsp</result>
+		</action>
+		<action name="changeUserInfo" class="changeInfoAction">
+			<result name="success">/WEB-INF/content/schange.jsp</result>
+		</action>
+		<action name="orderShow" class="orderShowAction">
+			<result name="success">/WEB-INF/content/orders.jsp</result>
+		</action>
+		<action name="logout" class="logoutAction">
+			<result name="success">index.jsp</result>
+		</action>
+		<action name="statistic" class="statisticAction">
+			<result name="success">/WEB-INF/content/bookstatistic.jsp</result>
+		</action>
+		<action name="statisticUser" class="statisticUserAction">
+			<result name="success">/WEB-INF/content/userstatistic.jsp</result>
+		</action>
+	</package>
+</struts>

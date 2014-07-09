@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="domain.Orders" table="orders">
+		<id 
+			name="orderid" 
+			column="orderid"
+			type="int"
+			
+		>
+		<generator class="increment" /></id>
+		
+		<property
+			name="order_date"
+			column="order_date"
+			update="true"
+			insert="true"
+			type="java.sql.Date"
+		></property>
+		<!-- 
+		<property 
+			name="orderid" 
+			column="orderid"
+			type="int"
+		></property>
+		
+		<property 
+			name="username" 
+			column="username"
+			type="java.lang.String"
+			length="20" 
+		></property>
+		 -->
+		
+   		<many-to-one name="user" column="username" class="domain.User"  
+   not-null="true" lazy="false"></many-to-one>
+   		<set name="orderItem" lazy="false" inverse="true" cascade="delete" >
+			<key>
+				<column name="orderid"/>
+			</key>
+		<one-to-many class="domain.OrderItem"/>
+		</set>
+	</class>
+</hibernate-mapping>

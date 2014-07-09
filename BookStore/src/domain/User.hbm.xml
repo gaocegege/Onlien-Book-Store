@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="domain.User" table="user">
+		<id 
+			name="username" 
+			column="username"
+			type="java.lang.String"
+			length="20" 
+		></id>
+		
+		<property
+			name="pwd"
+			column="pwd"
+			update="true"
+			insert="true"
+			not-null="true"
+			type="java.lang.String"
+			length="20"
+		></property>
+		
+		<property
+			name="sno"
+			column="sno"
+			update="true"
+			insert="true"
+			not-null="true"
+			type="java.lang.String"
+			length="10"
+		></property>
+		
+		<property
+			name="name"
+			column="name"
+			update="true"
+			insert="true"
+			not-null="true"
+			type="java.lang.String"
+			length="20"
+		></property>
+		
+		<property
+			name="account"
+			column="account"
+			update="true"
+			insert="true"
+			not-null="true"
+			precision="4" 
+			scale="2"
+		></property>
+		
+		<set name="orders" lazy="false" inverse="true" cascade="delete" order-by="order_date">
+			<key>
+				<column name="username"/>
+			</key>
+		<one-to-many class="domain.Orders"/>
+		</set>
+	</class>
+</hibernate-mapping>

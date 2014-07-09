@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="domain.Book" table="book">
+		<id 
+			name="ISBN" 
+			column="ISBN"
+			type="java.lang.String"
+			length="13"
+		></id>
+		
+		<property
+			name="bookname"
+			column="bookname"
+			update="true"
+			insert="true"
+			not-null="true"
+			type="java.lang.String"
+			length="20"
+		></property>
+		
+		<property
+			name="price"
+			column="price"
+			update="true"
+			insert="true"
+			not-null="true"
+			precision="4" 
+			scale="2"
+		></property>
+		
+		<property
+			name="number"
+			column="number"
+			update="true"
+			insert="true"
+			not-null="true"
+			type="int"
+		></property>
+		
+		<property
+			name="publishmentName"
+			column="publishmentName"
+			update="true"
+			insert="true"
+			type="java.lang.String"
+			length="20"
+		></property>
+		
+		<set name="orderItem" lazy="false" inverse="true" cascade="delete" >
+			<key>
+				<column name="itemid"/>
+			</key>
+		<one-to-many class="domain.OrderItem"/>
+		</set>
+	</class>
+</hibernate-mapping>
