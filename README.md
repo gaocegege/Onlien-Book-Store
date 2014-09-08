@@ -1,7 +1,7 @@
 Onlien-Book-Store
 =================
 
-web课迭代
+web课的最后一次作业，是一个实现了基本需求的网上书店
 
 Coded by Cece
 
