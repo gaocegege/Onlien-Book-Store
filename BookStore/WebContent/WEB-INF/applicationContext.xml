@@ -28,7 +28,7 @@
    </property>
    <!-- 数据库地址，这里也要注意一下编码，不然乱码可是很郁闷的哦！ -->
    <property name="url">
-    <value>jdbc:mysql://localhost:3306/my_db_library?useUnicode=true&amp;characterEncoding=UTF-8</value>
+    <value>jdbc:mysql://121.40.136.175:3306/my_db_library?useUnicode=true&amp;characterEncoding=UTF-8</value>
    </property>
    <!--dialect,每个数据库对应的Dialet匹配其平台特性-->
    <!-- 
@@ -42,7 +42,7 @@
    </property>
    <!-- 数据库的密码 -->
    <property name="password">
-    <value></value>
+    <value>Zz119911</value>
    </property>
 </bean>
 <!-- 把数据源注入给Session工厂 -->
@@ -67,12 +67,9 @@
         </prop>  
         <!-- <prop key="hibernate.show_sql">true</prop>   -->
         <prop key="hibernate.format_sql">true</prop>  
+        <prop key="hibernate.hbm2ddl.auto">update</prop>      
         <prop key="hibernate.current_session_context_class">
         	org.springframework.orm.hibernate4.SpringSessionContext  
-        <!-- 在Spring @Transactional声明式事务管理的配置中,hibernate.current_session_context_class=thread -->  
-        <!-- 这一句是不能加的,加了就会出错!那为什么不能加呢? -->  
-        <!-- 那是因为在Spring事务管理中,current Session是绑定到SpringSessionContext中的,而不是ThreadLocalSessionContext中的 -->  
-        <!-- <prop key="hibernate.current_session_context_class">thread</prop> -->  
         </prop>  
         <prop key="hibernate.search.lucene_version">LUCENE_36</prop>  
         <prop key="hibernate.search.default.directory_provider">  
