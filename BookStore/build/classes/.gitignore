@@ -1,0 +1,7 @@
+/action/
+/dao/
+/domain/
+/hibernate.cfg.xml
+/service/
+/struts.xml
+/test/
