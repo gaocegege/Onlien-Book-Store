@@ -38,3 +38,4 @@ Icon
 # class file
 *.class
 *.classpath
+BookStore/build/
