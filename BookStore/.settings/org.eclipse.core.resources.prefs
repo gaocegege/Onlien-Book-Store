@@ -1,4 +1,4 @@
-#Mon Jun 09 19:15:53 CST 2014
+#Sun Dec 28 16:04:04 CST 2014
 eclipse.preferences.version=1
 encoding//WebContent/WEB-INF/content/bargain.jsp=UTF-8
 encoding//WebContent/WEB-INF/content/error.jsp=UTF-8
@@ -10,5 +10,6 @@ encoding//WebContent/basket.jsp=UTF-8
 encoding//WebContent/bookinfo.jsp=UTF-8
 encoding//WebContent/changeinfo.jsp=UTF-8
 encoding//WebContent/index.jsp=UTF-8
+encoding//WebContent/js/jquery.tagsinput.js=UTF-8
 encoding//WebContent/login.jsp=UTF-8
 encoding//WebContent/register.jsp=UTF-8
